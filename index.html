@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript">
+        if (document.addEventListener) {
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            }, false);
+        } else {
+            document.attachEvent('oncontextmenu', function () {
+                window.event.returnValue = false;
+            });
+        }
+    </script>
+</head>
+
+<body onload="initGame()">
+    <div class="top">
+        <h1>Minesweeper</h1>
+        <h2>0</h2>
+        <button class="smiley" onclick="initGame()">😐</button>
+    </div>
+    <div class="board">
+
+    </div>
+    <div class="bottom">
+        <button onclick="initGame(4, 2)">Beginner</button>
+        <button onclick="initGame(8, 12)">Medium</button>
+        <button onclick="initGame(12, 30)">Expert</button>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>

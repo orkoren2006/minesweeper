@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minesweeper</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript">
         if (document.addEventListener) {
@@ -20,21 +21,32 @@
 </head>
 
 <body onload="initGame()">
-    <div class="top">
-        <h1>Minesweeper</h1>
-        <h2>0</h2>
-    </div>
-    <div class="top-botton">
-    <button class="smiley" onclick="initGame()">😐</button>
-</div>
-    <div class="board">
-
-    </div>
+    
+        <div class="top">
+            <h1>Minesweeper</h1>
+            <button class="smiley" onclick="initGame()">😐</button>
+        </div>
+                
+        </div>
+        <div class="top-botton">
+            <h3>Your Time:</h3>
+            <h2>0</h2>  
+        </div>
+    
     <div class="bottom">
-        <button onclick="initGame(4, 2)">Beginner</button>
-        <button onclick="initGame(8, 12)">Medium</button>
-        <button onclick="initGame(12, 30)">Expert</button>
+        <button class= "beginner" onclick="initGame(4, 2)">Beginner</button>
+        <button class= "medium"onclick="initGame(8, 12)">Medium</button>
+        <button class= "expert" onclick="initGame(12, 30)">Expert</button>
     </div>
+    
+    <div class= "big_board">
+        <div class="hint"></div>
+        <div class="board"></div>
+           
+    </div>  
+
+    
+    <h2 class="mines">Mines left to reveal:</h2>
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>

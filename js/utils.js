@@ -21,3 +21,7 @@ function stop() {
     clearInterval(ID)
 }
 
+function showMinesLeft() {
+    var minesLeft = gLevel.MINES - gGame.markedCount;
+    document.querySelector('.mines').innerHTML = `Mines left: ${minesLeft}`
+}

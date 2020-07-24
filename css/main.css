@@ -6,25 +6,84 @@ body {
     background-color: #118497;
 }
 
-h1 {
-    text-align: center;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 36px;
-    font-weight: 600;
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
 
+.top{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left:40px;
+}
+
+.top-botton{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.column_1{
+    width: 70%;
+}
+
+.column_2{
+    width: 30%
+}
+
+.big_board{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 72px;
+
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+h1 {
+    text-align: right;
+    font-family: "Staatliches";
+    font-size: 56px;
+    margin-bottom: 0px;
+    color: #FFC425;
+    text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
 }
 
 h2 {
     text-align: center;
-    font-family: "Lucida Console", Monaco, monospace;
+    font-family: "Staatliches";
+    color: black;
+}
 
+h3{
+    text-align: center;
+    font-family: "Staatliches";
+    color:black;
+    margin-right: 16px;
+    font-size: 24px;
 }
 
 .smiley {
     height: 50px;
     width: 50px;
-    text-align: center;
-    font-size: x-large
+    text-align: left;
+    font-size:32px;
 }
 
 
@@ -32,59 +91,111 @@ button {
     text-align: center;
     cursor: pointer;
     display: block;
-   
     margin-bottom: 5px;
     height: 48px;
-    width: 96px;
-    font-family: "Lucida Console", Monaco, monospace;
+    width: 120px;
+    font-family: "Staatliches";
+    font-size: 18px;
+    margin-bottom: 8px;
+    background-color: transparent;
     margin-left: 16px;
-    margin-right: 16px;	
-    
-    
+    border:none;
 }
-
-button:hover {
-    background-color: #696969;
+   
+.bottom button.beginner {
+    
     color: #FFFFFF;
+    text-shadow: -2px 0 #003C00, 0 2px #003C00, 2px 0 #003C00, 0 -2px #003C00;
+    border-radius: 8px;
+    border: 2px solid #003C00;
+    background-image: linear-gradient(-180deg, #00C900 10%, #007C00 90%);
+    box-shadow: 
+                0 -4px 24px  #00C900 inset,
+                0 12px 8px rgba(255,255,255, 0.4) inset,
+                0 4px 8px 0  #00C900 inset;
 }
 
+.bottom button.medium {
+    
+    color: #FFFFFF;
+    text-shadow: -2px 0 #F25C05, 0 2px #F25C05, 2px 0 #F25C05, 0 -2px #F25C05;
+    border-radius: 8px;
+    border: 2px solid #F25C05;
+    background-image: linear-gradient(-180deg, #F2B705 10%, #F28705 90%);
+    box-shadow: 
+                0 -4px 24px  #F2B705 inset,
+                0 12px 8px rgba(255,255,255, 0.4) inset,
+                0 4px 8px 0  #F2B705 inset;
+}
+
+.bottom button.expert {
+    
+    color: #FFFFFF;
+    text-shadow: -2px 0 #8C0303, 0 2px #8C0303, 2px 0 #8C0303, 0 -2px #8C0303;
+    border-radius: 8px;
+    border: 2px solid #8C0303;
+    background-image: linear-gradient(-180deg, #F20505 10%, #BF0404 90%);
+    box-shadow: 
+                0 -4px 24px  #F20505 inset,
+                0 12px 8px rgba(255,255,255, 0.4) inset,
+                0 4px 8px 0  #F20505 inset;    
+}
+
+.hint{
+    margin-top:10px;
+    margin-right: 16px;
+
+}
+
+.big_board button.hint_btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    text-shadow: -1px 0 #022873, 0 1px #022873, 1px 0 #022873, 0 -1px #022873;
+    border: 3px solid #022873;
+    background-image: linear-gradient(-180deg, #66A3D9 10%, #497CBF 90%);
+    box-shadow: 
+                0 -4px 24px  #66A3D9 inset,
+                0 12px 8px rgba(255,255,255, 0.4) inset,
+                0 4px 8px 0  #66A3D9 inset;  
+
+}
+
+.big_board button.hintPressed {
+    
+    text-shadow: -1px 0 #A4A4A4, 0 1px #A4A4A4, 1px 0 #A4A4A4, 0 -1px #A4A4A4;
+    border: 3px solid #A4A4A4;
+    background-image: linear-gradient(-180deg, #D7D7D7 10%, #A4A4A4 90%);
+    box-shadow: 
+                0 -4px 24px  #D7D7D7 inset,
+                0 12px 8px rgba(255,255,255, 0.4) inset,
+                0 4px 8px 0  #D7D7D7 inset;   
+}
 table {
     margin: auto;
     table-layout: fixed;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-spacing: 1px;
+    background-color: #808080;
 }
+
 .cell {
-    background-color:#A6A6A6;
+    background-color: #c0c0c0;
     text-align: center;
-    height: 50px;
-    width: 50px;
-    border: 1px solid white;
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
     cursor: pointer;
-
-   
-
-
+    border: 3px outset #ececec;
 }
 
 .pressed {
-    background-color: lightgray;
-    font-family: "Lucida Console", Monaco, monospace;
+    background-color: #c0c0c0;
+    font-family: ""Lucida Console", Monaco, monospace ";
     font-weight: 700;
     font-size: 16px;
+    border: 1px solid #ececec;
 }
 
-.bottom{
-    display: flex;
-    justify-content: center;
-}
-
-.top{
-    display: grid;
-    justify-content: center;
-}
-
-.top-botton{
-    display: flex;
-    justify-content: center;
-}

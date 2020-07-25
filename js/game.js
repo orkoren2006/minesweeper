@@ -138,17 +138,19 @@ function renderBoard(board) {
 
 function cellClicked(elCell, i, j) {
     if (gGame.isOn) {
+        // if (gBoard[i][j].isMine === true && gGame.showCount === 0) { //attempt for first click not mine
+        //     renderBoard(gBoard);
+        // } else {
         if (isHint === true) {
             revealNegs(i, j);
             isHint = false;
-        } else { //if(gGame.showCount === 0 && cell.isMine === false){         //delete this line if bugs
+        } else {       
             stop();
             startStopwatch();
             var cell = gBoard[i][j]
             cell.isShown === false ? cell.isShown = true : cell.isShown = false;
             var elContainer = document.querySelector(`.cell${i}-${j}`)
             elContainer.classList.add('pressed')
-            // if(cell.isMine === true && gGame.showCount === 0) return; //failed attempt to avoid first click on mine
             if (cell.isShown === true) { //first degree if statement with isShown 
                 if (cell.minesAroundCount > 0 && cell.isMine === false) { //revealing each cell according to its content
                     elContainer.innerHTML = cell.minesAroundCount;
@@ -174,8 +176,8 @@ function cellClicked(elCell, i, j) {
             }
             if (gGame.showCount === (gLevel.SIZE ** 2 - gLevel.MINES) && gGame.markedCount === gLevel.MINES) gameWon()
             console.log('game count', gGame.showCount);
-        // } else {
-        //     initGame()
+            // } else {
+            //     initGame()
         }
     }
 }
@@ -189,12 +191,12 @@ function cellMarked(elCell, i, j) {
         if (cell.isMarked === true) {
             gGame.markedCount++
             elCell.innerHTML = FLAG;
-            showMinesLeft() //remove if bugs
+            showMinesLeft()
         }
         else {
             gGame.markedCount--
             elCell.innerHTML = null;
-            showMinesLeft() //remove if bugs
+            showMinesLeft()
         }
         if (gGame.showCount === (gLevel.SIZE ** 2 - gLevel.MINES) && gGame.markedCount === gLevel.MINES) gameWon()
         console.log(gGame.markedCount);
@@ -242,7 +244,7 @@ function revealNegs(idxI, idxJ) {
     hideNegs(idxI, idxJ);
 }
 
-function hideNegs(idxI, idxJ) { //seems like the overwrite bug is completely fixed but not 100% sure
+function hideNegs(idxI, idxJ) { //seems like the overwrite bug is completely fixed but not certain
     setTimeout(function () {
         var index = gBoard[idxI][idxJ];
         if (index.isMine === true && index.isShown === false && index.isMarked === false) {
@@ -273,15 +275,16 @@ function hideNegs(idxI, idxJ) { //seems like the overwrite bug is completely fix
 
 }
 
-function giveHint(elCell) { 
-    if (gGame.isOn){
-    if (isHint === false) {
-        isHint = true;
-        elCell.onclick = '';
-        elCell.classList.add('hintPressed')
-    } else {
-        isHint = false;
-    }}
+function giveHint(elCell) {
+    if (gGame.isOn) {
+        if (isHint === false) {
+            isHint = true;
+            elCell.onclick = '';
+            elCell.classList.add('hintPressed')
+        } else {
+            isHint = false;
+        }
+    }
 }
 
 
